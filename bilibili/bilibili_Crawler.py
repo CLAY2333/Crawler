@@ -14,7 +14,7 @@ def IsNone(S):
         return True
 
 #爬取充电人数和up主名字
-def crawbilibili(userid,sheet):
+def crawbilibili(userid,sheet,book):
     global row
     userid
     url_elec = 'https://elec.bilibili.com/api/query.rank.do?mid=' + str(userid)
@@ -48,6 +48,9 @@ def crawbilibili(userid,sheet):
         sheet.write(row, 1, items_name[0])
         sheet.write(row, 2, items_elec[0])
         row+=1
+        if(row%1000==0):
+            book.save('test.xls')
+            print("save as ",row)
     except error.URLError as e:
         if hasattr(e,"code"):
             print(e.code)
@@ -59,5 +62,5 @@ if __name__ == '__main__':
     book = xlwt.Workbook()  # 新建一个excel
     sheet = book.add_sheet('case1_sheet')  # 添加一个sheet页
     for i in tqdm(range(1,400)):
-        crawbilibili(i,sheet)
+        crawbilibili(i,sheet,book)
     book.save('test.xls')
