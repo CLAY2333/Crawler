@@ -126,6 +126,7 @@ class Leetcode:
                         threads.remove(thread)
 
             thread = threading.Thread(target=process_submit_list, args=(question,), daemon=True)
+            print(-999)
             thread.start()
             threads.append(thread)
 
