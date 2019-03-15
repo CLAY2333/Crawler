@@ -150,6 +150,7 @@ class Leetcode:
                                                 medium_num=question_level[2],
                                                 hard_num=question_level[3],
                                                 solv_question_list=question_list))
+            print(question_num)
 
 
 if __name__ == '__main__':
