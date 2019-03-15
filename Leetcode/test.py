@@ -133,6 +133,7 @@ class Leetcode:
 
 
     def __generate_readme(self, question_list):
+        print(question_list)
         question_num = len(question_list)
         question_level = Counter(q.count(':star:') for q in question_list)
         question_list.sort(key=lambda q: int(re.search(r"(\d+)\..*", q).group(1)))
