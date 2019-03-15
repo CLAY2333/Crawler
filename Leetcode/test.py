@@ -117,6 +117,7 @@ class Leetcode:
                         question_list.append("n{:04d}. {} {}".format(question_["question_id"],
                                                                      question_["question_title"],
                                                                      ":star:" * question_["question_difficulty"]))
+                        print(question_list)
                         break
 
             while len(threads) >= max_threads:
@@ -133,7 +134,6 @@ class Leetcode:
 
 
     def __generate_readme(self, question_list):
-        print(question_list)
         question_num = len(question_list)
         question_level = Counter(q.count(':star:') for q in question_list)
         question_list.sort(key=lambda q: int(re.search(r"(\d+)\..*", q).group(1)))
