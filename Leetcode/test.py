@@ -114,6 +114,7 @@ class Leetcode:
                                                              time = datetime.fromtimestamp(int(submit["timestamp"])).strftime("%Y-%m-%d %H:%M"),
                                                              lang = lang,
                                                              code = src))
+                            print(-9999)
                         question_list.append("n{:04d}. {} {}".format(question_["question_id"],
                                                                      question_["question_title"],
                                                                      ":star:" * question_["question_difficulty"]))
