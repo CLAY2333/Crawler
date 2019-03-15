@@ -92,7 +92,6 @@ class Leetcode:
                                                       question["question_title"],
                                                       idx + 1, len(solved_list)))
             def process_submit_list(question_):
-                print(1)
                 submit_list = self.get_submit_list(question_["question_slug"])
                 for submit in submit_list:
                     if submit["lang"] == lang:
@@ -118,7 +117,7 @@ class Leetcode:
                         question_list.append("n{:04d}. {} {}".format(question_["question_id"],
                                                                      question_["question_title"],
                                                                      ":star:" * question_["question_difficulty"]))
-                        print(question_list)
+                        print(-9999)
                         break
 
             while len(threads) >= max_threads:
