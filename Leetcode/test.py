@@ -92,6 +92,7 @@ class Leetcode:
                                                       question["question_title"],
                                                       idx + 1, len(solved_list)))
             def process_submit_list(question_):
+                print(1)
                 submit_list = self.get_submit_list(question_["question_slug"])
                 for submit in submit_list:
                     if submit["lang"] == lang:
@@ -126,7 +127,6 @@ class Leetcode:
                         threads.remove(thread)
 
             thread = threading.Thread(target=process_submit_list, args=(question,), daemon=True)
-            print(-999)
             thread.start()
             threads.append(thread)
 
